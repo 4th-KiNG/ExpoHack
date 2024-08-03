@@ -1,0 +1,10 @@
+.LeadList{
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    &_Leads{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}

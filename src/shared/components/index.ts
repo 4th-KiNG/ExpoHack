@@ -4,6 +4,8 @@ import Header from "./Header/Header";
 import AuthLayout from "./AuthLayout/AuthLayout";
 import RegForm from "./RegForm/RegForm";
 import LoginForm from "./LoginForm/LoginForm";
+import LeadList from "./LeadList/LeadList";
+import Lead from "./Lead/Lead";
 
 export{
     Layout,
@@ -11,5 +13,7 @@ export{
     Header,
     AuthLayout,
     RegForm,
-    LoginForm
+    LoginForm,
+    LeadList,
+    Lead
 }

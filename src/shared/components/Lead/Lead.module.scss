@@ -1,0 +1,35 @@
+.Lead{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    cursor: move;
+    user-select: none;
+    gap: 5px;
+    max-width: 225px;
+    width: max-content;
+    padding: 7px 20px;
+    box-shadow: 1px 1px 5px 1px rgba($color: #A3A3A3, $alpha: 0.1);
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    &_Title{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    &_Price{
+        font-size: 16px;
+        font-weight: 400;
+        color: #3284FF;
+    }
+    &_Content{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    &_Time{
+        font-size: 12px;
+        color: #ADADAD;
+        margin-left: auto;
+    }
+}

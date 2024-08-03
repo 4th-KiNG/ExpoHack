@@ -14,11 +14,11 @@ const NavPanel = () => {
             isActive: window.location.pathname === "/"
         },
         {
-            path: "/sales",
+            path: "/leads",
             title: "Воронка",
             image: sales,
             activeImage: salesActive,
-            isActive: window.location.pathname === "/sales"
+            isActive: window.location.pathname === "/leads"
         }
     ]
     
