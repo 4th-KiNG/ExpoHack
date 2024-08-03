@@ -20,7 +20,7 @@ const LeadList = (props: ILeadList) => {
                 groupName='leads'
                 getChildPayload={(i: number) => leadList[i]}
                 onDrop={(e: DropResult) => setLeadList(applyDrag(leadList, e))}
-                style={{ minHeight: "100%" }}
+                style={{ minHeight: "calc(100% - 200px)" }}
             >
                 {leadList.map((lead: ILead, index) => {
                     return(
