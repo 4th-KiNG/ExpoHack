@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from './NavLink.module.scss'
 import { ILink } from "../../types/LinkTypes";
 
-const NavLink = ({path, title, image, isActive} : ILink) => {
+const NavLink = ({path, title, image, isActive, activeImage} : ILink) => {
     return (
         <>
             <Link 
@@ -14,7 +14,7 @@ const NavLink = ({path, title, image, isActive} : ILink) => {
                     color: `${isActive ? "#FF8F32" : "#8E99A8"}`
                 }}
             >
-                <img src={image} alt="" />
+                <img src={isActive ? activeImage : image} alt="" />
                 <p>{title}</p>
             </Link>
         </>

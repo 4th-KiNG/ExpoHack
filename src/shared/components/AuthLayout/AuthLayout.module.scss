@@ -1,0 +1,29 @@
+.AuthLayout{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    gap: 45px;
+    &_Image{
+        width: 620px;
+        height: 620px;
+        object-fit: contain;
+    }
+    &_Form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &_Ico{
+            height: 50px;
+            object-fit: contain;
+        }
+        &_Title{
+            font-size: 40px;
+            font-weight: 500;
+        }
+        &_Content{
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 80px;
+        }
+    }
+}

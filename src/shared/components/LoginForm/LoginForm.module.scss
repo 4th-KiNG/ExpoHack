@@ -1,0 +1,23 @@
+.LoginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    max-width: 450px;
+    gap: 25px;
+    
+}
+
+.Settings{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    &>a{
+        color: #5691F8;
+        width: max-content;
+    }
+    &>p{
+        color: #8E99A8;
+    }
+}

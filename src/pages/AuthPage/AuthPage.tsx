@@ -1,13 +1,11 @@
-import { Layout } from "../../shared/components";
+import { AuthLayout, RegForm } from "../../shared/components";
 
 const AuthPage = () => {
     return (
         <>
-        <Layout>
-            <div>
-                123
-            </div>
-        </Layout>
+        <AuthLayout>
+            <RegForm />
+        </AuthLayout>
         </>
     );
 }

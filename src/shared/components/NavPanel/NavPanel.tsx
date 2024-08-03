@@ -1,33 +1,27 @@
 import styles from './NavPanel.module.scss'
 import { NavLink } from '../../ui';
-import { logo } from '../../../assets';
-import { useEffect, useState } from 'react';
+import { home, homeActive, logo, sales, salesActive } from '../../../assets';
 import { ILink } from '../../types/LinkTypes';
 
 
-
 const NavPanel = () => {
-    const [path, setPath] = useState("")
-    useEffect(() => {
-        const allpath = window.location.href.split("/")
-        setPath(allpath[allpath.length - 1])
-    }, [window.location.href])
     const links: ILink[] = [
         {
             path: "/",
             title: "Главная",
-            image: "",
-            isActive: path === ""
+            image: home,
+            activeImage: homeActive,
+            isActive: window.location.pathname === "/"
         },
         {
-            path: "/main",
+            path: "/sales",
             title: "Воронка",
-            image: "",
-            isActive: path === "main"
+            image: sales,
+            activeImage: salesActive,
+            isActive: window.location.pathname === "/sales"
         }
     ]
-
-
+    
     return (
         <>
         <nav className={styles.NavPanel}>
