@@ -1,6 +1,6 @@
 import styles from './NavPanel.module.scss'
 import { NavLink } from '../../ui';
-import { home, homeActive, logo, sales, salesActive } from '../../../assets';
+import { analytics, analyticsActive, home, homeActive, lead, leadActive, logo, sales, salesActive } from '../../../assets';
 import { ILink } from '../../types/LinkTypes';
 
 
@@ -15,11 +15,25 @@ const NavPanel = () => {
         },
         {
             path: "/leads",
+            title: "Лиды",
+            image: lead,
+            activeImage: leadActive,
+            isActive: window.location.pathname === "/leads"
+        },
+        {
+            path: "/sales",
             title: "Воронка",
             image: sales,
             activeImage: salesActive,
-            isActive: window.location.pathname === "/leads"
-        }
+            isActive: window.location.pathname === "/sales"
+        },
+        {
+            path: "/analytics",
+            title: "Аналитика",
+            image: analytics,
+            activeImage: analyticsActive,
+            isActive: window.location.pathname === "/analytics"
+        },
     ]
     
     return (

@@ -1,6 +1,9 @@
 .Label{
     font-size: 20px;
     color: #8E99A8;
+    @media (max-width: 1000px) {
+        font-size: 16px;
+    }
 }
 
 .Input{
@@ -16,5 +19,12 @@
         font-size: 20px;
         border: 0px;
         outline: 0px;
+        @media (max-width: 1000px) {
+            font-size: 16px;
+        }
+    }
+    &>img{
+        width: 35px;
+        height: 35px;
     }
 }

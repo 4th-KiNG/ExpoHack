@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Layout, LeadList } from "../../shared/components";
+import { LeadList } from "../../shared/components";
 import { Title } from "../../shared/ui";
 import styles from './LeadsPage.module.scss'
 import { ILead } from "../../shared/types/LeadTypes";
@@ -38,45 +38,43 @@ const LeadsPage = () => {
     const [leads5, setLeads5] = useState<ILead[]>([])
     return (
         <>
-        <Layout>
-            <div className={styles.SalesPage}>
-                <Title
-                    content="Лиды"
+        <div className={styles.LeadsPage}>
+            <Title
+                content="Лиды"
+            />
+            <div className={styles.Page}>
+                <LeadList
+                    title="Новый"
+                    leadList={leads1}
+                    setLeadList={setLeads1}
+                    leadColor="#FFFCF6"
                 />
-                <div className={styles.Page}>
-                    <LeadList
-                        title="Новый"
-                        leadList={leads1}
-                        setLeadList={setLeads1}
-                        leadColor="#FFFCF6"
-                    />
-                    <LeadList
-                        title="КП выслано"
-                        leadList={leads2}
-                        setLeadList={setLeads2}
-                        leadColor="#FFF5E7"
-                    />
-                    <LeadList
-                        title="Клиент думает"
-                        leadList={leads3}
-                        setLeadList={setLeads3}
-                        leadColor="#FFE9C9"
-                    />
-                    <LeadList
-                        title="Теплый 0.7"
-                        leadList={leads4}
-                        setLeadList={setLeads4}
-                        leadColor="#FFCF86"
-                    />
-                    <LeadList
-                        title="Горячий 0.9"
-                        leadList={leads5}
-                        setLeadList={setLeads5}
-                        leadColor="#FFAD31"
-                    />
-                </div>
+                <LeadList
+                    title="КП выслано"
+                    leadList={leads2}
+                    setLeadList={setLeads2}
+                    leadColor="#FFF5E7"
+                />
+                <LeadList
+                    title="Клиент думает"
+                    leadList={leads3}
+                    setLeadList={setLeads3}
+                    leadColor="#FFE9C9"
+                />
+                <LeadList
+                    title="Теплый 0.7"
+                    leadList={leads4}
+                    setLeadList={setLeads4}
+                    leadColor="#FFCF86"
+                />
+                <LeadList
+                    title="Горячий 0.9"
+                    leadList={leads5}
+                    setLeadList={setLeads5}
+                    leadColor="#FFAD31"
+                />
             </div>
-        </Layout>
+        </div>
         </>
     );
 }

@@ -1,29 +1,43 @@
 .AuthLayout{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     min-height: 100vh;
     gap: 45px;
+    padding: 20px;
+    @media (max-width: 850px) {
+        grid-template-columns: 1fr;
+    }
     &_Image{
-        width: 620px;
-        height: 620px;
+        max-width: 100%;
+        max-height: 620px;
         object-fit: contain;
+        width: auto;
+        @media (max-width: 850px) {
+            display: none;
+        }
     }
     &_Form{
         display: flex;
         flex-direction: column;
         align-items: center;
-        &_Ico{
+        &_Logo{
             height: 50px;
             object-fit: contain;
+            @media (max-width: 500px) {
+                height: 44px;
+            }
         }
         &_Title{
             font-size: 40px;
             font-weight: 500;
-        }
-        &_Content{
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 80px;
+            text-align: center;
+            @media (max-width: 1000px) {
+                font-size: 28px;
+            }
+            @media (max-width: 500px) {
+                font-size: 24px;
+            }
         }
     }
 }

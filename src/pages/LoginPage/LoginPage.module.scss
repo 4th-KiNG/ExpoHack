@@ -1,0 +1,11 @@
+.LoginTitle{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 80px;
+    @media (max-width: 1000px) {
+        font-size: 16px;
+    }
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
+}

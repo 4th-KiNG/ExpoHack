@@ -11,7 +11,6 @@ const AuthLayout = ({children} : Readonly<{children: ReactNode}>) => {
             <div className={styles.AuthLayout_Form}>
                 <img src={logo} className={styles.AuthLayout_Form_Logo} alt="" />
                 <h1 className={styles.AuthLayout_Form_Title}>Утончённая CRM-система</h1>
-                <p className={styles.AuthLayout_Form_Content}>Введите ваш логин и пароль для входа в систему</p>
                 {children}
             </div>
         </div>

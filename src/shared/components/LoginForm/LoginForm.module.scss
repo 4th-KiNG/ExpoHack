@@ -5,7 +5,9 @@
     width: 100%;
     max-width: 450px;
     gap: 25px;
-    
+    @media (max-width: 500px) {
+        gap: 15px;
+    }
 }
 
 .Settings{
@@ -14,10 +16,25 @@
     justify-content: space-between;
     width: 100%;
     &>a{
+        font-size: 20px;
         color: #5691F8;
         width: max-content;
+        text-decoration: none;
+        @media (max-width: 1000px) {
+            font-size: 16px;
+        }
+        @media (max-width: 375px) {
+            font-size: 14px;
+        }
     }
     &>p{
+        font-size: 20px;
         color: #8E99A8;
+        @media (max-width: 1000px) {
+            font-size: 16px;
+        }
+        @media (max-width: 375px) {
+            font-size: 14px;
+        }
     }
 }

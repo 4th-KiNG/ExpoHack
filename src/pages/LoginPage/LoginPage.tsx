@@ -1,12 +1,12 @@
-import { AuthLayout, LoginForm } from "../../shared/components";
+import { LoginForm } from "../../shared/components";
+import styles from './LoginPage.module.scss'
 
 const LoginPage = () => {
 
     return (
         <>
-        <AuthLayout>
-            <LoginForm />
-        </AuthLayout>
+        <p className={styles.LoginTitle}>Введите ваш логин и пароль для входа в систему</p>
+        <LoginForm />
         </>
     );
 }

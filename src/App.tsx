@@ -1,19 +1,42 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
-import { AuthPage, LeadsPage, LoginPage, MainPage } from './pages'
+import { AnalyticsPage, AuthPage, LeadsPage, LoginPage, MainPage, SalesPage } from './pages'
+import { observer } from 'mobx-react-lite'
+import userStore from './store/userStore'
+import { AuthLayout, Layout } from './shared/components'
+import { useEffect } from 'react'
 
-function App() {
+const App = observer(() => {
+  const nav = useNavigate()
+  useEffect(() => {
+    userStore.user.login === "" ? nav("/auth") : nav("/")
+  }, [userStore.user])
 
+  if (userStore.user.login === ""){
+    return(
+      <>
+      <AuthLayout>
+        <Routes>
+          <Route path='/auth' element={<AuthPage/>}  />
+          <Route path='/login' element={<LoginPage/>}  />
+        </Routes>
+      </AuthLayout>
+      </>
+    )
+  }
+  
   return (
     <>
-    <Routes>
-      <Route path='/' element={<MainPage />} />
-      <Route path='/leads' element={<LeadsPage />} />
-      <Route path='/auth' element={<AuthPage/>}  />
-      <Route path='/login' element={<LoginPage/>}  />
-    </Routes>
+    <Layout>
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/leads' element={<LeadsPage />} />
+        <Route path='/sales' element={<SalesPage />} />
+        <Route path='/analytics' element={<AnalyticsPage />} />
+      </Routes>
+    </Layout>
     </>
   )
-}
+})
 
 export default App
