@@ -1,16 +1,18 @@
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes, useNavigate} from 'react-router-dom'
 import './App.css'
 import { AnalyticsPage, AuthPage, LeadsPage, LoginPage, MainPage, SalesPage } from './pages'
 import { observer } from 'mobx-react-lite'
 import userStore from './store/userStore'
 import { AuthLayout, Layout } from './shared/components'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
 import { useEffect } from 'react'
+
 
 const App = observer(() => {
   const nav = useNavigate()
   useEffect(() => {
-    userStore.user.login === "" ? nav("/auth") : nav("/")
-  }, [userStore.user])
+    if (userStore.user.login === "") nav("/auth")
+  }, [])
 
   if (userStore.user.login === ""){
     return(
@@ -33,6 +35,7 @@ const App = observer(() => {
         <Route path='/leads' element={<LeadsPage />} />
         <Route path='/sales' element={<SalesPage />} />
         <Route path='/analytics' element={<AnalyticsPage />} />
+        <Route path='/profile' element={<ProfilePage />} />
       </Routes>
     </Layout>
     </>

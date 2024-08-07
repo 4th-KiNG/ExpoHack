@@ -1,0 +1,46 @@
+.LeadForm{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #EEEDF1;
+    width: 800px;
+    height: 700px;
+    border-radius: 12px;
+    padding: 10px;
+    &_Forms{
+        height: 100%;
+        display: grid;
+        grid-template-columns: 300px 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+    }
+    &_Bg{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        position: fixed;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+    &_Buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        &>button{
+            padding: 17px 10px;
+            background-color: white;
+            color: white;
+            border-radius: 5px;
+            border: 0px;
+            font-size: 16px;
+            min-width: 175px;
+            font-weight: 500;
+        }
+    }
+}

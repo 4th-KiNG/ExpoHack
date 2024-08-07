@@ -8,6 +8,7 @@ const NavLink = ({path, title, image, isActive, activeImage} : ILink) => {
             <Link 
                 to={path}
                 className={styles.NavLink}
+                onClick={() => localStorage.setItem("currPage", path)}
                 style={{
                     borderRight: `10px solid ${isActive ? "#FF8F32" : "white"}`,
                     backgroundColor: `${isActive ? "#FFF9F1" : "white"}`,

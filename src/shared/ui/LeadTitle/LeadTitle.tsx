@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { ILeadTitle } from '../../types/LeadTitleTypes';
 import styles from './LeadTitle.module.scss'
+import CreateLeadForm from '../../components/CreateLeadForm/CreateLeadForm';
+import userStore from '../../../store/userStore';
 
 const LeadTitle = (props: ILeadTitle) => {
     const {content, color} = props
+    const [showCreateForm, setShowCreateForm] = useState(false)
     return (
         <>
         <div
@@ -12,8 +16,9 @@ const LeadTitle = (props: ILeadTitle) => {
             }}
         >
             <h2>{content}</h2>
-            <button>+</button>
+            <button onClick={() => setShowCreateForm(true)}>+</button>
         </div>
+        {showCreateForm && <CreateLeadForm creater={userStore.currPartner} status='content' />}
         </>
     );
 }

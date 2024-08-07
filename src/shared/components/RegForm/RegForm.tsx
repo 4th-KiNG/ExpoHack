@@ -12,6 +12,16 @@ const RegForm = () => {
                 label='Логин'
             />
             <Input
+                type='text'
+                name='name'
+                label='Имя'
+            />
+            <Input
+                type='text'
+                name='lastName'
+                label='Фамилия'
+            />
+            <Input
                 type='password'
                 name='password'
                 label='Пароль'
@@ -21,6 +31,7 @@ const RegForm = () => {
                 label='Повторите пароль'
             />
             <Button
+                size='large'
                 type='submit'
                 content='Зарегистрироваться'
             />

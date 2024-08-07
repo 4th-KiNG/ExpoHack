@@ -11,6 +11,9 @@ import lead from './lead.svg'
 import leadActive from './leadActive.svg'
 import analytics from './analytics.svg'
 import analyticsActive from './analyticsActive.svg'
+import edit from './edit.svg'
+import exit from './exit.svg'
+import defaultAvatar from './default.jpg'
 
 export{
     password,
@@ -25,5 +28,7 @@ export{
     lead,
     leadActive,
     analytics,
-    analyticsActive
+    analyticsActive,
+    edit,exit,
+    defaultAvatar
 }

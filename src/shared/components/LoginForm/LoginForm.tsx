@@ -21,6 +21,7 @@ const LoginForm = () => {
                 <Link to={""} className={styles.LinkText}>Забыли пароль?</Link>
             </div>
             <Button
+                size='large'
                 type='submit'
                 content='Войти'
             />

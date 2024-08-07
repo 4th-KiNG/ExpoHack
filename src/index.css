@@ -10,5 +10,8 @@
 body{
     max-width: 1440px;
     margin: 0 auto;
-    
+}
+
+body::-webkit-scrollbar{
+    width: 0;
 }

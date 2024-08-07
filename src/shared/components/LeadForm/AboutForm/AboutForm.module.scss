@@ -1,0 +1,12 @@
+.AboutForm{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    &>form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

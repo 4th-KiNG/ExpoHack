@@ -1,0 +1,18 @@
+.Bg{
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.CreateLeadForm{
+    position: relative;
+    background-color: white;
+    height: max-content;
+    max-width: 430px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

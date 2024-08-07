@@ -5,6 +5,7 @@ import Button from "./Button/Button";
 import Input from "./Input/Input";
 import CheckBox from "./CheckBox/CheckBox";
 import LeadTitle from "./LeadTitle/LeadTitle";
+import StaticInput from "./StaticInput/StaticInput";
 
 export {
     NavLink,
@@ -13,5 +14,6 @@ export {
     Button,
     Input,
     CheckBox,
-    LeadTitle
+    LeadTitle,
+    StaticInput
 }

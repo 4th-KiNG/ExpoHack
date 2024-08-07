@@ -5,8 +5,9 @@ import { applyDrag } from '../../../lib/utils';
 import { ILead } from '../../types/LeadTypes';
 import Lead from '../Lead/Lead';
 import { LeadTitle } from '../../ui';
+import { observer } from 'mobx-react-lite';
 
-const LeadList = (props: ILeadList) => {
+const LeadList = observer((props: ILeadList) => {
     const {title, leadList, setLeadList, leadColor} = props
     return (
         <>
@@ -36,6 +37,6 @@ const LeadList = (props: ILeadList) => {
         </div>
         </>
     );
-}
+})
  
 export default LeadList;

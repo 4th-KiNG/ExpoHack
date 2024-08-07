@@ -1,21 +1,22 @@
 export interface ILead{
-    //На странице лидов
-    title: string,
     price: number,
-    time: string,
-    content: string
+    id: string,
+    firstName: string
+    lastName: string
+    fatherName: string
+    birthday: string
+    phone: string
+    email: string
+    creater: string
+    owner: string
+    status?: string
+    description: string
     borderColor?: string
-    
-    // //В информации о лиде
-    // name: string,
-    // lastName: string,
-    // fatherName: string,
-    // birthday: string,
-    // phone: string,
-    // email: string,
-    
-    // //Статус лида
-    // creater: string,
-    // owner: string,
-    // status: string
+    clickEvent?: () => void
+}
+
+
+export interface ICreateLeadForm{
+    creater: string,
+    status: string
 }

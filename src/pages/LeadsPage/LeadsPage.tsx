@@ -1,47 +1,127 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { LeadList } from "../../shared/components";
 import { Title } from "../../shared/ui";
 import styles from './LeadsPage.module.scss'
 import { ILead } from "../../shared/types/LeadTypes";
+import { observer } from "mobx-react-lite";
+import userStore from "../../store/userStore";
 
-const LeadsPage = () => {
+const LeadsPage = observer(() => {
     const [leads1, setLeads1] = useState<ILead[]>([
         {
-            title: "Покупка пива на кооп. счет",
-            price: 1400,
-            content: "Нужно оформть на П.К. Смирнову оформить вкид",
-            time: "2 часа назад"
+            id: "123",
+            firstName: "Илья",
+            lastName: "Илонов",
+            fatherName: "Борисович",
+            price: 7000,
+            birthday: "1 апреля 2005 года",
+            phone: "89413445883",
+            email: "ozoki46@gmail.com",
+            creater: "Экспобанк",
+            owner: "П-О Xвоя",
+            description: "Предложить ипотеку под 50% годовых"
         },
         {
-            title: "Покупка пива на кооп. счет",
-            price: 1400,
-            content: "Нужно оформть на П.К. Смирнову оформить вкид",
-            time: "2 часа назад"
-        },
-        {
-            title: "Покупка пива на кооп. счет",
-            price: 1400,
-            content: "Нужно оформть на П.К. Смирнову оформить вкид",
-            time: "2 часа назад"
-        },
+            id: "124",
+            firstName: "Алексей",
+            lastName: "Кузнецов",
+            fatherName: "Сергеевич",
+            price: 8500,
+            birthday: "15 мая 2003 года",
+            phone: "89114567329",
+            email: "aleksei.kuznetsov@gmail.com",
+            creater: "Экспобанк",
+            owner: "П-О Xвоя",
+            description: "Предложить кредит на обучение"
+        }
     ])
     const [leads2, setLeads2] = useState<ILead[]>([
         {
-            title: "Покупка пива на кооп. счет",
-            price: 1400,
-            content: "Нужно оформть на П.К. Смирнову оформить вкид",
-            time: "2 часа назад"
+            id: "125",
+            firstName: "Мария",
+            lastName: "Иванова",
+            fatherName: "Алексеевна",
+            price: 6400,
+            birthday: "22 июня 1998 года",
+            phone: "89263451234",
+            email: "maria.ivanova@example.com",
+            creater: "Экспобанк",
+            owner: "П-О Xвоя",
+            description: "Предложить инвестиционный план"
+        },
+        {
+            id: "126",
+            firstName: "Дмитрий",
+            lastName: "Петров",
+            fatherName: "Иванович",
+            price: 7200,
+            birthday: "30 декабря 1995 года",
+            phone: "89634561234",
+            email: "dmitriy.petrov@example.com",
+            creater: "Экспобанк",
+            owner: "П-О Xвоя",
+            description: "Предложить автокредит"
         }
     ])
     const [leads3, setLeads3] = useState<ILead[]>([])
-    const [leads4, setLeads4] = useState<ILead[]>([])
-    const [leads5, setLeads5] = useState<ILead[]>([])
+    const [leads4, setLeads4] = useState<ILead[]>([
+        {
+            id: "128",
+            firstName: "Николай",
+            lastName: "Сидоров",
+            fatherName: "Олегович",
+            price: 7800,
+            birthday: "18 марта 2001 года",
+            phone: "89503451276",
+            email: "nikolay.sidorov@example.com",
+            creater: "Экспобанк",
+            owner: "П-О Xвоя",
+            description: "Предложить ипотеку под 30% годовых"
+        }
+    ])
+    const [leads5, setLeads5] = useState<ILead[]>([
+        {
+            id: "127",
+            firstName: "Екатерина",
+            lastName: "Смирнова",
+            fatherName: "Владимировна",
+            price: 9300,
+            birthday: "5 ноября 2000 года",
+            phone: "89094561231",
+            email: "ekaterina.smirnova@example.com",
+            creater: "Экспобанк",
+            owner: "П-О Xвоя",
+            description: "Предложить кредитную карту"
+        }
+    ])
+
+    
+    const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        userStore.setPartner(e.target.value)
+        localStorage.setItem("currPartner", e.target.value)
+    }
+
     return (
         <>
         <div className={styles.LeadsPage}>
-            <Title
-                content="Лиды"
-            />
+            <div className={styles.Header}>
+                <Title
+                    content="Лиды"
+                />
+                <select name="" id="" onChange={handleSelectChange}>
+                    <option value="Экспобанк" selected={userStore.currPartner == "Экспобанк"}>Экспобанк</option>
+                    <option value="Д2 страхование" selected={userStore.currPartner == "Д2 страхование"}>Д2 страхование</option>
+                    <option value="Автоэкспресс" selected={userStore.currPartner == "Автоэкспресс"}>Автоэкспресс</option>
+                    <option value="EXPOCAR" selected={userStore.currPartner == "EXPOCAR"}>EXPOCAR</option>
+                    <option value="П-О Xвоя" selected={userStore.currPartner == "П-О Xвоя"}>Парк-отель хвоя</option>
+                    <option value="Лизинг 1" selected={userStore.currPartner == "Лизинг 1"}>Лизинг 1</option>
+                    <option value="Лизинг 2" selected={userStore.currPartner == "Лизинг 2"}>Лизинг 2</option>
+                    <option value="Лизинг 3" selected={userStore.currPartner == "Лизинг 3"}>Лизинг 3</option>
+                    <option value="Лизинг 4" selected={userStore.currPartner == "Лизинг 4"}>Лизинг 4</option>
+                    <option value="Лизинг 5" selected={userStore.currPartner == "Лизинг 5"}>Лизинг 5</option>
+                </select>
+            </div>
+            
             <div className={styles.Page}>
                 <LeadList
                     title="Новый"
@@ -77,6 +157,6 @@ const LeadsPage = () => {
         </div>
         </>
     );
-}
+})
  
 export default LeadsPage;
