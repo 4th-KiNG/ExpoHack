@@ -12,7 +12,7 @@ export interface ILead{
     status?: string
     description: string
     borderColor?: string
-    clickEvent: () => void
+    clickEvent?: () => void
 }
 
 

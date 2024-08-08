@@ -10,7 +10,7 @@ const LeadForm = (props: ILead) => {
     const {clickEvent} = props
     const formRef1 = useRef<HTMLDivElement>(null)
     const handleCloseForm = useCallback((event: MouseEvent<HTMLDivElement>) => {
-        if (formRef1.current && !formRef1.current.contains(event.target as Node)) clickEvent()
+        if (formRef1.current && !formRef1.current.contains(event.target as Node) && clickEvent) clickEvent()
     }, [clickEvent]);
     return (
         <>
