@@ -2,9 +2,11 @@ import styles from './NavPanel.module.scss'
 import { NavLink } from '../../ui';
 import { generator, generatorActive, home, homeActive, lead, leadActive, logo } from '../../../assets';
 import { ILink } from '../../types/LinkTypes';
+import { useNavigate } from 'react-router-dom';
 
 
 const NavPanel = () => {
+    const nav = useNavigate()
     const links: ILink[] = [
         {
             path: "/",
@@ -32,7 +34,7 @@ const NavPanel = () => {
     return (
         <>
         <nav className={styles.NavPanel}>
-            <img className={styles.Logo} src={logo} alt="" />
+            <img className={styles.Logo} onClick={() => nav("/")} src={logo} alt="" />
             {links.map((link: ILink, index) => {
                 return(
                     <NavLink
