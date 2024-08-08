@@ -9,16 +9,13 @@
 }
 
 .Page{
-    max-width: calc(100vw - 280px - 70px);
+    max-width: calc(1440px - 280px - 70px);
     overflow-x: scroll;
     height: 100%;
     background-color: white;
     border-radius: 10px;
     display: flex;
     gap: 5px;
-    &::-webkit-scrollbar{
-        width: 0;
-    }
 }
 
 .Header{
