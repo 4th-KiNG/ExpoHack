@@ -23,7 +23,6 @@ const GeneratorPage = () => {
         </div>
         {showCreateForm && 
             <CreateLeadForm
-                creater={userStore.currPartner}
                 clickEvent={() => setShowCreateForm(false)}
             />
         }
