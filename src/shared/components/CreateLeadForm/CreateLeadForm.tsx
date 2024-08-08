@@ -1,15 +1,20 @@
+import { useRef, MouseEvent, useCallback } from 'react';
 import { ICreateLeadForm } from '../../types/LeadTypes';
 import { Input } from '../../ui';
 import styles from './CreateLeadForm.module.scss'
 
 const CreateLeadForm = (props: ICreateLeadForm) => {
     const {clickEvent, selectPartner, selectStatus} = props
+    const formRef = useRef<HTMLDivElement>(null)
+    const handleCloseForm = useCallback((event: MouseEvent<HTMLDivElement>) => {
+        if (formRef.current && !formRef.current.contains(event.target as Node)) clickEvent()
+    }, [clickEvent]);
     const partenrs = ["Экспобанк", "Д2 страхование", "Автоэкспресс", "ЭКСПОКАР", "П-О Xвоя", "Лизинг 1", "Лизинг 2", "Лизинг 3", "Лизинг 4", "Лизинг 5"]
     const status = ["Новый", "КП выслано", "Клиент думает", "Теплый 0.7", "Горячий 0.9"]
     return (
         <>
-        <div className={styles.Bg}>
-            <div className={styles.CreateLeadForm}>
+        <div className={styles.Bg} onClick={handleCloseForm}>
+            <div className={styles.CreateLeadForm} ref={formRef}>
                 <h2 className={styles.CreateLeadForm_Title}>Создание лида</h2>
                 <form action="" className={styles.CreateLeadForm_Form}>
                     <div style={{display: "flex", gap: "10px"}}>

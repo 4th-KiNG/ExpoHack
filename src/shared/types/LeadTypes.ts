@@ -12,12 +12,12 @@ export interface ILead{
     status?: string
     description: string
     borderColor?: string
-    clickEvent?: () => void
+    clickEvent: () => void
 }
 
 
 export interface ICreateLeadForm{
-    clickEvent?: () => void,
+    clickEvent: () => void,
     selectPartner?: string,
     selectStatus?: string
 }

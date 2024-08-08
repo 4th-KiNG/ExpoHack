@@ -1,3 +1,4 @@
+import { useRef, useCallback, MouseEvent } from 'react';
 import { ILead } from '../../types/LeadTypes';
 import AboutForm from './AboutForm/AboutForm';
 import CommentsForm from './CommentsForm/CommentsForm';
@@ -7,10 +8,14 @@ import StatusForm from './StatusForm/StatusForm';
 
 const LeadForm = (props: ILead) => {
     const {clickEvent} = props
+    const formRef1 = useRef<HTMLDivElement>(null)
+    const handleCloseForm = useCallback((event: MouseEvent<HTMLDivElement>) => {
+        if (formRef1.current && !formRef1.current.contains(event.target as Node)) clickEvent()
+    }, [clickEvent]);
     return (
         <>
-        <div className={styles.LeadForm_Bg}>
-            <div className={styles.LeadForm}>
+        <div className={styles.LeadForm_Bg} onClick={handleCloseForm}>
+            <div className={styles.LeadForm} ref={formRef1}>
                 <div className={styles.LeadForm_Forms}>
                     <AboutForm {...props} />
                     <StatusForm {...props} />
