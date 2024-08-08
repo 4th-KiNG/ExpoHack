@@ -18,7 +18,14 @@ const LeadTitle = (props: ILeadTitle) => {
             <h2>{content}</h2>
             <button onClick={() => setShowCreateForm(true)}>+</button>
         </div>
-        {showCreateForm && <CreateLeadForm creater={userStore.currPartner} status='content' />}
+        {showCreateForm && 
+            <CreateLeadForm
+                creater={userStore.currPartner}
+                clickEvent={() => setShowCreateForm(false)}
+                selectPartner={`${localStorage.getItem("currPartner")}`}
+                selectStatus={content}
+            />
+        }
         </>
     );
 }

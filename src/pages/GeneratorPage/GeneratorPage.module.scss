@@ -1,0 +1,36 @@
+.GeneratorPage{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+    padding: 35px;
+    width: 100%;
+    height: calc(100% - 130px);
+    &_Title{
+        font-size: 24px;
+        font-weight: 500;
+    }
+    &_Content{
+        font-size: 20px;
+    }
+    &_Buttons{
+        display: flex;
+        max-width: 500px;
+        gap: 15px;
+        &>input{
+            display: none;
+        }
+    }
+}
+
+.Page{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}

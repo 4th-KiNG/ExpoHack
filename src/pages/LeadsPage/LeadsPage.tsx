@@ -108,7 +108,7 @@ const LeadsPage = observer(() => {
                 <Title
                     content="Лиды"
                 />
-                <select name="" id="" onChange={handleSelectChange}>
+                <select className={styles.LeadSelect} name="" id="" onChange={handleSelectChange}>
                     <option value="Экспобанк" selected={userStore.currPartner == "Экспобанк"}>Экспобанк</option>
                     <option value="Д2 страхование" selected={userStore.currPartner == "Д2 страхование"}>Д2 страхование</option>
                     <option value="Автоэкспресс" selected={userStore.currPartner == "Автоэкспресс"}>Автоэкспресс</option>

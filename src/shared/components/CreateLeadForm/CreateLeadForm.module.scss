@@ -3,6 +3,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
 }
@@ -15,4 +16,42 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: #EBEDF2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &_Title{
+        font-size: 24px;
+        color: #FF8F32;
+        font-weight: 600;
+        text-align: center;
+    }
+    &_Form{
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 10px;
+        border-radius: 4px;
+        gap: 10px;
+    }
+}
+
+.Buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    &>button{
+        padding: 17px 10px;
+        background-color: white;
+        color: white;
+        border-radius: 5px;
+        border: 0px;
+        font-size: 16px;
+        width: 100%;
+        font-weight: 500;
+    }
 }

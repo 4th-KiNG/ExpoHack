@@ -1,17 +1,17 @@
 import { Route, Routes, useNavigate} from 'react-router-dom'
 import './App.css'
-import { AnalyticsPage, AuthPage, LeadsPage, LoginPage, MainPage, SalesPage } from './pages'
+import { AuthPage, LeadsPage, LoginPage, MainPage, ProfilePage} from './pages'
 import { observer } from 'mobx-react-lite'
 import userStore from './store/userStore'
 import { AuthLayout, Layout } from './shared/components'
-import ProfilePage from './pages/ProfilePage/ProfilePage'
 import { useEffect } from 'react'
+import GeneratorPage from './pages/GeneratorPage/GeneratorPage'
 
 
 const App = observer(() => {
   const nav = useNavigate()
   useEffect(() => {
-    if (userStore.user.login === "") nav("/auth")
+    if (localStorage.getItem("currPage")) nav(`${localStorage.getItem("currPage")}`)
   }, [])
 
   if (userStore.user.login === ""){
@@ -33,9 +33,8 @@ const App = observer(() => {
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/leads' element={<LeadsPage />} />
-        <Route path='/sales' element={<SalesPage />} />
-        <Route path='/analytics' element={<AnalyticsPage />} />
         <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/generator' element={<GeneratorPage />} />
       </Routes>
     </Layout>
     </>

@@ -14,6 +14,8 @@ import analyticsActive from './analyticsActive.svg'
 import edit from './edit.svg'
 import exit from './exit.svg'
 import defaultAvatar from './default.jpg'
+import generator from './generator.svg'
+import generatorActive from './generatorActive.svg'
 
 export{
     password,
@@ -30,5 +32,7 @@ export{
     analytics,
     analyticsActive,
     edit,exit,
-    defaultAvatar
+    defaultAvatar,
+    generator,
+    generatorActive
 }
