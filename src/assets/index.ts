@@ -16,6 +16,8 @@ import exit from './exit.svg'
 import defaultAvatar from './default.jpg'
 import generator from './generator.svg'
 import generatorActive from './generatorActive.svg'
+import search from './search.svg'
+import notice from './notice.svg'
 
 export{
     password,
@@ -34,5 +36,7 @@ export{
     edit,exit,
     defaultAvatar,
     generator,
-    generatorActive
+    generatorActive,
+    search,
+    notice
 }

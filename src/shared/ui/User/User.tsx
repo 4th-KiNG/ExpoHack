@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import styles from './User.module.scss'
 import { Link } from "react-router-dom";
-import { defaultAvatar, exit } from "../../../assets";
+import { defaultAvatar, exit, notice } from "../../../assets";
 import userStore from "../../../store/userStore";
 
 
@@ -14,6 +14,10 @@ const User = observer(() => {
             alignItems: "center",
             gap: "10px"
         }}>
+            <div className={styles.Notice}>
+                <img src={notice} alt="" />
+                <div className={styles.Notice_Count}>1</div>
+            </div>
             <Link to="/profile" className={styles.User}>
                 <img src={userStore.user.avatarURL ? userStore.user.avatarURL : defaultAvatar} className={styles.User_Avatar} alt="" />
                 <div className={styles.User_Info}>

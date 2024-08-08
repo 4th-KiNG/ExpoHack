@@ -3,11 +3,11 @@
     align-items: center;
     gap: 10px;
     width: max-content;
-    margin-left: auto;
     text-decoration: none;
     &_Exit{
-        width: 25px;
-        height: 25px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
     }
     &_Avatar{
         width: 60px;
@@ -20,6 +20,7 @@
         flex-direction: column;
         align-items: start;
         justify-content: center;
+        color: black;
         &_Login{
             font-size: 20px;
         }
@@ -27,5 +28,30 @@
             font-size: 16px;
             color: #FF8F32;
         }
+    }
+}
+.Notice{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #F8FBFC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    &_Count{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 14px;
+        right: 14px;
+        color: white;
+        position: absolute;
+        font-size: 12px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #FF8F32;
     }
 }
