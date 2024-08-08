@@ -17,7 +17,6 @@ export interface ILead{
 
 
 export interface ICreateLeadForm{
-    creater: string,
     clickEvent?: () => void,
     selectPartner?: string,
     selectStatus?: string

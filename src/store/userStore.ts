@@ -15,7 +15,7 @@ export const DefaultUser = {
 
 class UserStore{
     user: IUser = DefaultUser
-    currPartner: string = localStorage.getItem("currPartner") ? `${localStorage.getItem("currPartner")}` : ""
+    currPartner: string = localStorage.getItem("currPartner") ? `${localStorage.getItem("currPartner")}` : "Экспобанк"
     constructor(){
         makeAutoObservable(this)
     }

@@ -20,9 +20,8 @@ const LeadTitle = (props: ILeadTitle) => {
         </div>
         {showCreateForm && 
             <CreateLeadForm
-                creater={userStore.currPartner}
                 clickEvent={() => setShowCreateForm(false)}
-                selectPartner={`${localStorage.getItem("currPartner")}`}
+                selectPartner={userStore.currPartner}
                 selectStatus={content}
             />
         }
