@@ -15,8 +15,9 @@ const GeneratorPage = () => {
                 <h3 className={styles.GeneratorPage_Title}>{userStore.user.name} {userStore.user.lastName}</h3>
                 <p className={styles.GeneratorPage_Content}>Загрузите ваших клиентов</p>
                 <div  className={styles.GeneratorPage_Buttons}>
-                    <Button type='button' content='Загрузить одного клиента' bgColor='#FF8F32' onClick={() => setShowCreateForm(true)} />
-                    <Button type='button' content='Загрузить несколько клиентов (.json/.csv)' bgColor='#FF8F32' onClick={() => inputRef.current?.click()} />
+                    <Button type='button' size='large' content='Загрузить одного клиента' bgColor='#FF8F32' onClick={() => setShowCreateForm(true)} />
+                    <Button type='button' size='large' content='Загрузузить несколько клиентов (.xlsx/.json/.csv)' bgColor='#FF8F32' onClick={() => inputRef.current?.click()} />
+                    <Button type='button' size='large' content='Выгрузить сводку лидов (.xlsx/.csv/.json)' bgColor='#FF8F32' />
                     <input type="file" ref={inputRef} />
                 </div>
             </div>
