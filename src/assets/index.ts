@@ -18,8 +18,10 @@ import generator from './generator.svg'
 import generatorActive from './generatorActive.svg'
 import search from './search.svg'
 import notice from './notice.svg'
+import funnel from './funnel.png'
 
 export{
+    funnel,
     password,
     logo,
     authimage,
