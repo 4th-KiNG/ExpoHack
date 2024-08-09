@@ -12,12 +12,14 @@ const MainPage = () => {
         localStorage.setItem("currPartner", e.target.value)
     }
     const [page, setPage] = useState<"funnel" | "diagram">("funnel")
+    const [metric, setMetric] = useState<"sum" | "percent">("sum")
+    const allSum = 1000
     return (
         <>
         <div className={styles.MainPage}>
             <div className={styles.MainPage_Header}>
                 <Title content='Главная' />
-                <div>
+                <div className={styles.MainPage_Header_Switcher}>
                     <select className={styles.LeadSelect} name="" id="" onChange={handleSelectChange}>
                         <option value="Экспобанк" selected={userStore.currPartner == "Экспобанк"}>Экспобанк</option>
                         <option value="Д2 страхование" selected={userStore.currPartner == "Д2 страхование"}>Д2 страхование</option>
@@ -30,8 +32,30 @@ const MainPage = () => {
                         <option value="Лизинг 4" selected={userStore.currPartner == "Лизинг 4"}>Лизинг 4</option>
                         <option value="Лизинг 5" selected={userStore.currPartner == "Лизинг 5"}>Лизинг 5</option>
                     </select>
-                    <div>
-                        
+                    <div className={styles.MetricSelect}>
+                        <p
+                            style={{
+                                color: `${metric === "sum" ? "white" : "black"}`
+                            }}
+                            onClick={() => setMetric("sum")}
+                        >
+                            Сумма
+                        </p>
+                        <p
+                            style={{
+                                color: `${metric === "percent" ? "white" : "black"}`
+                            }}
+                            onClick={() => setMetric("percent")}
+                        >
+                            Процент
+                        </p>
+                        <div
+                            className={styles.MetricSelect_Block}
+                            style={{
+                                left: `${metric === "sum" ? "0px" : "80px"}`,
+                                width: `${metric === "sum" ? "85px" : "92px"}`,
+                            }}
+                        />
                     </div>
                 </div>
                 
@@ -62,13 +86,13 @@ const MainPage = () => {
                     <div className={styles.Funnel}>
                         <img className={styles.Funnel_Image} src={funnel} alt="" />
                         <div className={styles.Funnel_Stats}>
-                            <p>Новое предложение - <span style={{fontWeight: "600"}}>100%</span></p>
-                            <p>Взято в работу - <span style={{fontWeight: "600"}}>75%</span></p>
-                            <p>Обсуждение условий - <span style={{fontWeight: "600"}}>42%</span></p>
-                            <p>Принимает решение - <span style={{fontWeight: "600"}}>25%</span></p>
-                            <p>Заключение сделки - <span style={{fontWeight: "600"}}>10%</span></p>
-                            <p>Сопровождение - <span style={{fontWeight: "600"}}>5%</span></p>
-                            <p>Завершение - <span style={{fontWeight: "600"}}>1%</span></p>
+                            <p>Новое предложение - <span style={{fontWeight: "600"}}>{metric === "sum" ? allSum : `${100}%`}</span></p>
+                            <p>Взято в работу - <span style={{fontWeight: "600"}}>{metric === "sum" ? allSum / 100 * 75 : `${75}%`}</span></p>
+                            <p>Обсуждение условий - <span style={{fontWeight: "600"}}>{metric === "sum" ? allSum / 100 * 42 : `${42}%`}</span></p>
+                            <p>Принимает решение - <span style={{fontWeight: "600"}}>{metric === "sum" ? allSum / 100 * 25 : `${25}%`}</span></p>
+                            <p>Заключение сделки - <span style={{fontWeight: "600"}}>{metric === "sum" ? allSum / 100 * 10 : `${10}%`}</span></p>
+                            <p>Сопровождение - <span style={{fontWeight: "600"}}>{metric === "sum" ? allSum / 100 * 5 : `${5}%`}</span></p>
+                            <p>Завершение - <span style={{fontWeight: "600"}}>{metric === "sum" ? allSum / 100 * 1 : `${1}%`}</span></p>
                         </div>
                         <Stage style={{position: "absolute"}} width={1000} height={1000}>
                             <Layer>

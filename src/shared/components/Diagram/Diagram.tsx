@@ -19,7 +19,7 @@ const Diagram = () => {
         },
         series: [
           {
-            name: 'Данные',
+            name: 'Лиды',
             type: 'pie',
             radius: ['50%', '90%'],  // Внешний и внутренний радиусы
             avoidLabelOverlap: false,
@@ -42,6 +42,7 @@ const Diagram = () => {
               { value: 735, name: 'Д2 страхование' },
               { value: 580, name: 'Автоэкспресс' },
               { value: 484, name: 'EXPOCAR' },
+              { value: 484, name: 'П-О Xвоя' },
               { value: 300, name: 'Лизинг 1' },
               { value: 300, name: 'Лизинг 2' },
               { value: 300, name: 'Лизинг 3' },
